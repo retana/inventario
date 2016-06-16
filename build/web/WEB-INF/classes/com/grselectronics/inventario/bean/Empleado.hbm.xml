@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/06/2016 10:19:17 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grselectronics.inventario.bean.Empleado" table="empleado" catalog="db_inventario" optimistic-lock="version">
+        <id name="idEmpleado" type="java.lang.Integer">
+            <column name="id_empleado" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="puesto" class="com.grselectronics.inventario.bean.Puesto" fetch="select">
+            <column name="id_puesto" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="64" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" length="64" />
+        </property>
+        <property name="usuarioWindows" type="string">
+            <column name="usuario_windows" length="32" />
+        </property>
+        <property name="usuarioSap" type="string">
+            <column name="usuario_sap" length="32" />
+        </property>
+        <property name="passWindows" type="string">
+            <column name="pass_windows" length="128" />
+        </property>
+        <property name="passSap" type="string">
+            <column name="pass_sap" length="128" />
+        </property>
+        <set name="asignacionEquipos" table="asignacion_equipo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_empleado" />
+            </key>
+            <one-to-many class="com.grselectronics.inventario.bean.AsignacionEquipo" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/06/2016 10:19:17 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grselectronics.inventario.bean.AsignacionEquipo" table="asignacion_equipo" catalog="db_inventario" optimistic-lock="version">
+        <id name="idAsignacionEquipo" type="java.lang.Integer">
+            <column name="id_asignacion_equipo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="departamento" class="com.grselectronics.inventario.bean.Departamento" fetch="select">
+            <column name="id_departamento" />
+        </many-to-one>
+        <many-to-one name="empleado" class="com.grselectronics.inventario.bean.Empleado" fetch="select">
+            <column name="id_empleado" />
+        </many-to-one>
+        <many-to-one name="equipo" class="com.grselectronics.inventario.bean.Equipo" fetch="select">
+            <column name="id_equipo" />
+        </many-to-one>
+        <many-to-one name="usuario" class="com.grselectronics.inventario.bean.Usuario" fetch="select">
+            <column name="id_usuario" />
+        </many-to-one>
+        <property name="fechaAsignacion" type="string">
+            <column name="fecha_asignacion" length="32" />
+        </property>
+        <property name="fechaEntrega" type="string">
+            <column name="fecha_entrega" length="32" />
+        </property>
+    </class>
+</hibernate-mapping>

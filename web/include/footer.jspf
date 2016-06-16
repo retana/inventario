@@ -1,0 +1,11 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<footer class="main-footer">
+    <div class="container">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0.0
+      </div>
+        <strong><a href="http://www.grselectrodomesticos.com/"> GRS electronics</a> 2016 </strong> &copy; Todos los derechos reservados <small href="#">-  Desarrollo Web por Francisco Retana</small>.
+    </div>
+    <!-- /.container -->
+</footer>

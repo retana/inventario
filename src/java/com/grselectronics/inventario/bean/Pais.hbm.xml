@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/06/2016 10:19:17 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grselectronics.inventario.bean.Pais" table="pais" catalog="db_inventario" optimistic-lock="version">
+        <id name="idPais" type="java.lang.Integer">
+            <column name="id_pais" />
+            <generator class="identity" />
+        </id>
+        <property name="nommbre" type="string">
+            <column name="nommbre" length="32" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

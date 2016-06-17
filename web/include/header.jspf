@@ -26,7 +26,7 @@
                 <li><a href="#">Departamento</a></li>
                 <li><a href="#">País</a></li>
                 <li class="divider"></li>
-                <li><a href="equipo/equipo.jsp">Equipo</a></li>
+                <li><a href="equipo.do">Equipo</a></li>
                 <li><a href="#">Clasificación de Equipo</a></li>
                 <li><a href="#">Caracteristicas</a></li>
               </ul>

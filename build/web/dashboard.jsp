@@ -124,7 +124,7 @@
                                     <div class="icon">
                                         <i class="ion ion-android-desktop"></i>
                                     </div>
-                                    <a href="equipo/equipo.jsp" class="small-box-footer">
+                                    <a href="equipo.do" class="small-box-footer">
                                         More info <i class="fa fa-arrow-circle-right"></i>
                                     </a>
                                 </div>

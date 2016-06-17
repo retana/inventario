@@ -54,19 +54,21 @@ public class HibernateUtil {
         sesion.getTransaction().commit();
         sesion.close();
     }
-    public void find(String id,Class<?> classs){
+    public Object find(String id,Class<?> classs){
         Session sesion=sessionFactory.openSession();
         sesion.beginTransaction();
-        sesion.get(classs, id);
+        Object obj=sesion.get(classs, id);
         sesion.getTransaction().commit();
         sesion.close();
+        return obj;
     }
-    public void find(int id,Class<?> classs){
+    public Object find(int id,Class<?> classs){
         Session sesion=sessionFactory.openSession();
         sesion.beginTransaction();
-        sesion.get(classs,id);
+        Object obj=sesion.get(classs,id);
         sesion.getTransaction().commit();
         sesion.close();
+        return obj;
     }
     public List<Object> sendQuery(String consulta){
         List<Object> resultado=new ArrayList<>();

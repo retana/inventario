@@ -57,7 +57,7 @@ public class JQueryDataTableParamModel {
     /// Comma separated list of column names
     /// </summary>
     public String sColumns;
-    public List aaData;
+    public String aaData;
     
     public String getJSONFormat(){
         return new Gson().toJson(this);

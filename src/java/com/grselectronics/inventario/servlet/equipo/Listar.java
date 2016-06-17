@@ -5,16 +5,16 @@
  */
 package com.grselectronics.inventario.servlet.equipo;
 
-import com.grselectronics.inventario.bean.Usuario;
 import com.grselectronics.inventario.controller.HibernateUtil;
-import com.grselectronics.inventario.funcion.JQueryDataTableParamModel;
 import java.io.IOException;
-import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
+import org.hibernate.Hibernate;
 
 /**
  *
@@ -24,16 +24,13 @@ import javax.servlet.http.HttpServletResponse;
 public class Listar extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setCharacterEncoding("utf-8");
-        resp.setContentType("application/json");
-        JQueryDataTableParamModel params=new JQueryDataTableParamModel();
-        List lista=HibernateUtil.getInstancia().sendQuery("From Equipo");
-        params.sEcho="2";
-        params.aaData=lista;   
-        params.sColumns="id,marca";
-        params.iDisplayLength=lista.size();
-        params.iDisplayStart=0;
-        resp.getWriter().write(params.getJSONFormat());
+        RequestDispatcher despachador=null;
+        req.setAttribute("listaEquipo", HibernateUtil.getInstancia().sendQuery("From Equipo"));
+        req.setAttribute("listaEstado", HibernateUtil.getInstancia().sendQuery("From Estado"));
+        req.setAttribute("listaTipo", HibernateUtil.getInstancia().sendQuery("From Tipo"));
+        req.setAttribute("listaEmpresa", HibernateUtil.getInstancia().sendQuery("From Empresa"));
+        despachador=req.getRequestDispatcher("equipo.jsp");
+        despachador.forward(req, resp);
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

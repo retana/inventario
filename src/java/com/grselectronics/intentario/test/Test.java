@@ -5,7 +5,7 @@
  */
 package com.grselectronics.intentario.test;
 
-import com.grselectronics.inventario.bean.Usuario;
+import com.grselectronics.inventario.bean.Equipo;
 import com.grselectronics.inventario.controller.HibernateUtil;
 
 /**
@@ -14,9 +14,9 @@ import com.grselectronics.inventario.controller.HibernateUtil;
  */
 public class Test {
     public static void main(String args[]){
-        /*for (Object obj: HibernateUtil.getInstancia().autenticarUsuario()) {
-            Usuario usr=(Usuario)obj;
-            System.out.print(usr.getNombre());
-        }*/
+        for (Object obj: HibernateUtil.getInstancia().sendQuery("From Equipo")) {
+            Equipo e=(Equipo)obj;
+            System.out.print(e.getModelo());
+        }
     }
 }

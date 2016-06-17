@@ -45,6 +45,19 @@ public class Equipo  implements java.io.Serializable {
        this.caracteristicaEquipos = caracteristicaEquipos;
     }
    
+    public Equipo(Empresa empresa, Estado estado, Tipo tipo, String marca, String modelo, String numSerie, String ubicacion, String fechaCompra, String finGarantia, String tiempoDeVida, String estadoDeGarantia) {
+       this.empresa = empresa;
+       this.estado = estado;
+       this.tipo = tipo;
+       this.marca = marca;
+       this.modelo = modelo;
+       this.numSerie = numSerie;
+       this.ubicacion = ubicacion;
+       this.fechaCompra = fechaCompra;
+       this.finGarantia = finGarantia;
+       this.tiempoDeVida = tiempoDeVida;
+       this.estadoDeGarantia = estadoDeGarantia;
+    }
     public Integer getIdEquipo() {
         return this.idEquipo;
     }

@@ -57,6 +57,12 @@
                                     <th>Estado</th>
                                     <th>Tipo</th>
                                     <th>Empresa</th>
+                                    <th>IP</th>
+                                    <th>MAC</th>
+                                    <th>ACTIVE DIRECTORY</th>
+                                    <th>HOST</th>
+                                    <th>LICENCIA</th>
+                                    <th>OS</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
@@ -75,8 +81,14 @@
                                         <td>${equipo.getEstado().getNombre()}</td>
                                         <td>${equipo.getTipo().getNombre()}</td>
                                         <td>${equipo.getEmpresa().getNombre()}</td>
+                                        <td>${equipo.getIp()}</td>
+                                        <td>${equipo.getMacAddress()}</td>
+                                        <td>${equipo.getUserActivedirectory()}</td>
+                                        <td>${equipo.getHostName()}</td>
+                                        <td>${equipo.getLicencia()}</td>
+                                        <td>${equipo.getOs()}</td>
                                         <td>
-                                            <a href="#"><span class="glyphicon glyphicon-erase"></a>
+                                            <a href="eliminarEquipo.do?idEquipo=${equipo.getIdEquipo()}"><span class="glyphicon glyphicon-erase"></a>
                                             <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
                                         </td>
                                     </tr>
@@ -96,6 +108,12 @@
                                     <th>Estado</th>
                                     <th>Tipo</th>
                                     <th>Empresa</th>
+                                    <th>IP</th>
+                                    <th>MAC</th>
+                                    <th>ACTIVE DIRECTORY</th>
+                                    <th>HOST</th>
+                                    <th>LICENCIA</th>
+                                    <th>OS</th>
                                     <th>Opciones</th>
                                 </tr>
                             </tfoot>

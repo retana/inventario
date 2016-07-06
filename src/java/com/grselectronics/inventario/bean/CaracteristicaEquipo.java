@@ -1,5 +1,5 @@
 package com.grselectronics.inventario.bean;
-// Generated 16/06/2016 10:19:16 AM by Hibernate Tools 4.3.1
+// Generated 20-jun-2016 15:36:15 by Hibernate Tools 4.3.1
 
 
 

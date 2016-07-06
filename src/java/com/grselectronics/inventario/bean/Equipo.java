@@ -1,5 +1,5 @@
 package com.grselectronics.inventario.bean;
-// Generated 16/06/2016 10:19:16 AM by Hibernate Tools 4.3.1
+// Generated 20-jun-2016 15:36:15 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -23,13 +23,19 @@ public class Equipo  implements java.io.Serializable {
      private String finGarantia;
      private String tiempoDeVida;
      private String estadoDeGarantia;
+     private String ip;
+     private String macAddress;
+     private String userActivedirectory;
+     private String hostName;
+     private String licencia;
+     private String os;
      private Set asignacionEquipos = new HashSet(0);
      private Set caracteristicaEquipos = new HashSet(0);
 
     public Equipo() {
     }
 
-    public Equipo(Empresa empresa, Estado estado, Tipo tipo, String marca, String modelo, String numSerie, String ubicacion, String fechaCompra, String finGarantia, String tiempoDeVida, String estadoDeGarantia, Set asignacionEquipos, Set caracteristicaEquipos) {
+    public Equipo(Empresa empresa, Estado estado, Tipo tipo, String marca, String modelo, String numSerie, String ubicacion, String fechaCompra, String finGarantia, String tiempoDeVida, String estadoDeGarantia, String ip, String macAddress, String userActivedirectory, String hostName, String licencia, String os) {
        this.empresa = empresa;
        this.estado = estado;
        this.tipo = tipo;
@@ -41,23 +47,14 @@ public class Equipo  implements java.io.Serializable {
        this.finGarantia = finGarantia;
        this.tiempoDeVida = tiempoDeVida;
        this.estadoDeGarantia = estadoDeGarantia;
-       this.asignacionEquipos = asignacionEquipos;
-       this.caracteristicaEquipos = caracteristicaEquipos;
+       this.ip = ip;
+       this.macAddress = macAddress;
+       this.userActivedirectory = userActivedirectory;
+       this.hostName = hostName;
+       this.licencia = licencia;
+       this.os = os;
     }
    
-    public Equipo(Empresa empresa, Estado estado, Tipo tipo, String marca, String modelo, String numSerie, String ubicacion, String fechaCompra, String finGarantia, String tiempoDeVida, String estadoDeGarantia) {
-       this.empresa = empresa;
-       this.estado = estado;
-       this.tipo = tipo;
-       this.marca = marca;
-       this.modelo = modelo;
-       this.numSerie = numSerie;
-       this.ubicacion = ubicacion;
-       this.fechaCompra = fechaCompra;
-       this.finGarantia = finGarantia;
-       this.tiempoDeVida = tiempoDeVida;
-       this.estadoDeGarantia = estadoDeGarantia;
-    }
     public Integer getIdEquipo() {
         return this.idEquipo;
     }
@@ -141,6 +138,48 @@ public class Equipo  implements java.io.Serializable {
     
     public void setEstadoDeGarantia(String estadoDeGarantia) {
         this.estadoDeGarantia = estadoDeGarantia;
+    }
+    public String getIp() {
+        return this.ip;
+    }
+    
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+    public String getMacAddress() {
+        return this.macAddress;
+    }
+    
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
+    public String getUserActivedirectory() {
+        return this.userActivedirectory;
+    }
+    
+    public void setUserActivedirectory(String userActivedirectory) {
+        this.userActivedirectory = userActivedirectory;
+    }
+    public String getHostName() {
+        return this.hostName;
+    }
+    
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+    public String getLicencia() {
+        return this.licencia;
+    }
+    
+    public void setLicencia(String licencia) {
+        this.licencia = licencia;
+    }
+    public String getOs() {
+        return this.os;
+    }
+    
+    public void setOs(String os) {
+        this.os = os;
     }
     public Set getAsignacionEquipos() {
         return this.asignacionEquipos;

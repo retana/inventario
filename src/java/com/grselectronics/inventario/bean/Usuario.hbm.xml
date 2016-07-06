@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16/06/2016 10:19:17 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 20-jun-2016 15:36:16 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.grselectronics.inventario.bean.Usuario" table="usuario" catalog="db_inventario" optimistic-lock="version">
         <id name="idUsuario" type="java.lang.Integer">
             <column name="id_usuario" />
             <generator class="identity" />
         </id>
-        <many-to-one name="rol" class="com.grselectronics.inventario.bean.Rol" fetch="select" lazy="false">
+        <many-to-one name="rol" class="com.grselectronics.inventario.bean.Rol"  lazy="false" fetch="select">
             <column name="id_rol" />
         </many-to-one>
         <property name="nombre" type="string">
@@ -23,11 +23,6 @@
         <property name="contrasena" type="string">
             <column name="contrasena" length="128" />
         </property>
-        <set name="asignacionEquipos" table="asignacion_equipo" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="id_usuario" />
-            </key>
-            <one-to-many class="com.grselectronics.inventario.bean.AsignacionEquipo" />
-        </set>
+       
     </class>
 </hibernate-mapping>

@@ -63,6 +63,40 @@
                             </c:forEach>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Dirección IP:</label>
+                        <input type="date" class="form-control" name="txtIP">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Dirección Mac:</label>
+                        <input type="date" class="form-control" name="txtMacAddress">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Usuario Active Directory:</label>
+                        <input type="date" class="form-control" name="txtUserActivedirectory">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Nombre de Host:</label>
+                        <input type="date" class="form-control" name="txtHostName">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Licencia:</label>
+                        <select name="txtLicencia">
+                            <option value="Activa">Activa</option>
+                            <option value="Desactivada">Desactivada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Sistema Operativo:</label>
+                        <select name="txtOS">
+                            <option value="Windows 10">Windows 10</option>
+                            <option value="Windows 7">Windows 7</option>
+                            <option value="Windows XP">Windows XP</option>
+                            <option value="Windows Server">Windows Server</option>
+                            <option value="Ubuntu">Ubuntu</option>
+                            <option value="Ubuntu Server">Ubuntu Server</option>
+                        </select>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">

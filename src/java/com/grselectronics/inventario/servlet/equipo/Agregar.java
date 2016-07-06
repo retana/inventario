@@ -44,13 +44,13 @@ public class Agregar extends HttpServlet {
             Date fechaVencimiento;
         try {
             fechaVencimiento = sdf.parse(req.getParameter("txtFinGarantia"));  
+            String estado=""+fechaVencimiento.compareTo(fechaActual);
             
-            if(fechaActual.compareTo(fechaVencimiento)==1){
+            if(estado.equals("1")==true){
                 estadoDeGarantia="Vencida";
             }else{
                 estadoDeGarantia="Vigente";
             }
-            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -60,12 +60,18 @@ public class Agregar extends HttpServlet {
                 (Tipo) HibernateUtil.getInstancia().find(Integer.parseInt(req.getParameter("txtTipo")), Tipo.class),
                 req.getParameter("txtMarca"),
                 req.getParameter("txtModelo"),
-                req.getParameter("txtNumSerie"),
+                req.getParameter("txtSerie"),
                 req.getParameter("txtUbicacion"),
                 req.getParameter("txtFechaCompra"),
                 req.getParameter("txtFinGarantia"),
                 req.getParameter("txtTiempoDeVida"),
-                estadoDeGarantia
+                estadoDeGarantia,
+                req.getParameter("txtIP"),
+                req.getParameter("txtMacAddress"),
+                req.getParameter("txtUserActivedirectory"),
+                req.getParameter("txtHostName"),
+                req.getParameter("txtLicencia"),
+                req.getParameter("txtOS")
         ));
         despachador=req.getRequestDispatcher("equipo.do");
         despachador.forward(req, resp);

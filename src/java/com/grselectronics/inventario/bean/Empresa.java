@@ -1,5 +1,5 @@
 package com.grselectronics.inventario.bean;
-// Generated 16/06/2016 10:19:16 AM by Hibernate Tools 4.3.1
+// Generated 20-jun-2016 15:36:15 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,14 +14,15 @@ public class Empresa  implements java.io.Serializable {
      private Integer idEmpresa;
      private Pais pais;
      private String nombre;
-    
+     private Set equipos = new HashSet(0);
+
     public Empresa() {
     }
 
-    public Empresa(Pais pais, String nombre) {
+    public Empresa(Pais pais, String nombre, Set equipos) {
        this.pais = pais;
        this.nombre = nombre;
-      
+       this.equipos = equipos;
     }
    
     public Integer getIdEmpresa() {
@@ -45,7 +46,13 @@ public class Empresa  implements java.io.Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-  
+    public Set getEquipos() {
+        return this.equipos;
+    }
+    
+    public void setEquipos(Set equipos) {
+        this.equipos = equipos;
+    }
 
 
 
